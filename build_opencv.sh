@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 2019 Michael de Gans
 
-set -e
+#set -e
 
 # change default constants here:
 readonly PREFIX=/usr/local  # install prefix, (can be ~/.local for a user install)
@@ -25,7 +25,7 @@ cleanup () {
         if ! [[ "$1" -eq "--test-warning" ]] ; then
             echo "(Doing so may make running tests on the build later impossible)"
         fi
-        read -p "Y/N " yn
+        yn=y
         case ${yn} in
             [Yy]* ) rm -rf /tmp/build_opencv ; break;;
             [Nn]* ) exit ;;
